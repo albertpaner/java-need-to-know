@@ -927,11 +927,10 @@
 		- [HttpServlet](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServlet.html)
 			- Parameters
 				- `req` - an [HttpServletRequest](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServletRequest.html) object that contains the request the client has made of the servlet
-				  collapsed:: true
 					- [getAttribute](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/ServletRequest.html#getAttribute-java.lang.String-)
 					- [setAttribute](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/ServletRequest.html#setAttribute-java.lang.String-java.lang.Object-)
 					- [getRequestDispatcher](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/ServletRequest.html#getRequestDispatcher-java.lang.String-)
-						- [forward](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/RequestDispatcher.html#forward-javax.servlet.ServletRequest-javax.servlet.ServletResponse)
+						- [forward](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/RequestDispatcher.html#forward-javax.servlet.ServletRequest-javax.servlet.ServletResponse-)
 				- `resp` - an [HttpServletResponse](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServletResponse.html) object that contains the response the servlet sends to the client
 			- [doGet](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServlet.html#doGet-javax.servlet.http.HttpServletRequest-javax.servlet.http.HttpServletResponse-)
 			  collapsed:: true
