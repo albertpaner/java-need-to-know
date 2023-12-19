@@ -932,6 +932,7 @@
 					- [getRequestDispatcher](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/ServletRequest.html#getRequestDispatcher-java.lang.String-)
 						- [forward](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/RequestDispatcher.html#forward-javax.servlet.ServletRequest-javax.servlet.ServletResponse-)
 				- `resp` - an [HttpServletResponse](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServletResponse.html) object that contains the response the servlet sends to the client
+					- [sendRedirect](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServletResponse.html#sendRedirect-java.lang.String-)
 			- [doGet](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServlet.html#doGet-javax.servlet.http.HttpServletRequest-javax.servlet.http.HttpServletResponse-)
 			  collapsed:: true
 				- It's usually used to **preprocess** a request. I.e. doing some business stuff before presenting the HTML output from a JSP, such as gathering data for display in a table.
@@ -1026,4 +1027,9 @@
 	- Servlets and JSP (JavaServer Pages) are both technologies used in Java for building web applications
 	- JavaServer Pages (JSP) is a technology for developing web pages that support dynamic content which helps developers insert java code in HTML pages by making use of special JSP tags, most of which start with <% and end with %>. A JSP page is compiled into a Java servlet the first time it is accessed. After that, the generated servlet is used to service the incoming requests
 	-
-- Now.. what else?
+- [Singleton](https://refactoring.guru/design-patterns/singleton)
+- Spring
+	- Entity (replaces Bean)
+	- JPA
+	- Dependency Injection
+	- Inversion of Control
