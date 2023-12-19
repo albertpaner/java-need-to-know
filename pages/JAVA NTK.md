@@ -272,6 +272,13 @@
 				  }
 				  
 				  ```
+- [S.O.L.I.D.](https://www.baeldung.com/solid-principles)
+  collapsed:: true
+	- **S**ingle Responsibility
+	- **O**pen/Closed
+	- **L**iskov Substitution
+	- **I**nterface Segregation
+	- **D**ependency Inversion
 - [Data Types in Java](https://www.javatpoint.com/reference-data-types-in-java)
   collapsed:: true
 	- primitive
@@ -895,6 +902,7 @@
   collapsed:: true
 	- Authentication is the process of verifying who a user is, while Authorization is about verifying what they have access to
 	- [JWT]((https://www.baeldung.com/java-json-web-tokens-jjwt))
+	  collapsed:: true
 		- JWTs (pronounced “jots”) are URL-safe, encoded, cryptographically signed (sometimes encrypted) strings that we can use as tokens in a variety of applications
 		- ```json
 		  <input name="_csrf" type="hidden" 
@@ -911,8 +919,9 @@
 		  )
 		  ```
 		- JSON Web Tokens (JWT) are used for both authentication and authorization in web development.  When a user logs in, the server authenticates the user's credentials and if they are valid, the server generates a JWT that is sent back to the client. This token contains a payload of data, or claims about the user, which could include their user ID, role, or other identifying information.  For subsequent requests, the client sends this token back to the server in the HTTP Authorization header. The server then verifies the token and if it's valid, allows the request to proceed. This is the authorization process. The server knows that the requester is a legitimate user who has previously authenticated and it can also inspect the token's claims to determine if the user has the necessary permissions to perform the requested operation.
+	- [OAuth](https://www.ramotion.com/blog/what-is-oauth-authentification/#:~:text=OAuth%20is%20an%20open%20standard,applications%20without%20compromising%20their%20passwords)
+		-
 - Servlet and JSP
-  collapsed:: true
 	- [Servlet](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/Servlet.html)
 		- Programma scritto in Java e residente su un server, in grado di gestire le richieste generate da uno o più client, attraverso uno scambio di messaggi tra il server ed i client stessi che hanno effettuato la richiesta. Tipicamente sono collocate all'interno di Application Server o Web Application Server come, ad esempio, Tomcat.
 		- [HttpServlet](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServlet.html)
