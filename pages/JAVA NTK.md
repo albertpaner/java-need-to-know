@@ -277,8 +277,38 @@
 	- **S**ingle Responsibility
 	- **O**pen/Closed
 	- **L**iskov Substitution
+		- **if class *A* is a subtype of class *B*, we should be able to replace *B *with *A *without disrupting the behavior of our program.**
 	- **I**nterface Segregation
 	- **D**ependency Inversion
+		- The *Dependency Injection Principle* is  being able to pass (inject) the dependencies when required instead of initializing the dependencies inside of the recipient class.
+		- *Decouple the construction of your classes from the construction of your classes’ dependencies*
+		- ```java
+		  public class Windows98Machine {
+		  
+		      private final StandardKeyboard keyboard;
+		      private final Monitor monitor;
+		  
+		      public Windows98Machine() {
+		          monitor = new Monitor();
+		          keyboard = new StandardKeyboard();
+		      }
+		  
+		  }
+		  ```
+		- ```java
+		  public interface Keyboard { }
+		  
+		  public class Windows98Machine{
+		  
+		      private final Keyboard keyboard;
+		      private final Monitor monitor;
+		  
+		      public Windows98Machine(Keyboard keyboard, Monitor monitor) {
+		          this.keyboard = keyboard;
+		          this.monitor = monitor;
+		      }
+		  }
+		  ```
 - [Data Types in Java](https://www.javatpoint.com/reference-data-types-in-java)
   collapsed:: true
 	- primitive
@@ -922,6 +952,7 @@
 	- [OAuth](https://www.ramotion.com/blog/what-is-oauth-authentification/#:~:text=OAuth%20is%20an%20open%20standard,applications%20without%20compromising%20their%20passwords)
 		-
 - Servlet and JSP
+  collapsed:: true
 	- [Servlet](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/Servlet.html)
 		- Programma scritto in Java e residente su un server, in grado di gestire le richieste generate da uno o più client, attraverso uno scambio di messaggi tra il server ed i client stessi che hanno effettuato la richiesta. Tipicamente sono collocate all'interno di Application Server o Web Application Server come, ad esempio, Tomcat.
 		- [HttpServlet](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServlet.html)
@@ -1027,11 +1058,14 @@
 	- Servlets and JSP (JavaServer Pages) are both technologies used in Java for building web applications
 	- JavaServer Pages (JSP) is a technology for developing web pages that support dynamic content which helps developers insert java code in HTML pages by making use of special JSP tags, most of which start with <% and end with %>. A JSP page is compiled into a Java servlet the first time it is accessed. After that, the generated servlet is used to service the incoming requests
 	-
-- [Singleton](https://refactoring.guru/design-patterns/singleton)
+- [Singleton](https://www.javaboss.it/singleton-design-pattern/)
 - Spring
+  collapsed:: true
 	- Entity (replaces Bean)
 	- JPA
 	- Dependency Injection
+		- @Autowired in Spring
 	- Inversion of Control
 	- REST
 		- Controller
+- MVC
