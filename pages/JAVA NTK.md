@@ -325,9 +325,8 @@
 		- Class
 		- Interface
 		-
-- Classi e Interfacce                                                                                                                          
+- Classi e Interfacce
   collapsed:: true
-  [Differences between Interface and Classes](https://www.geeksforgeeks.org/differences-between-interface-and-class-in-java/)
 	- Class                                                                                                                                              
 	  [class](https://www.geeksforgeeks.org/classes-objects-java/)                                                                                                                                                                                          A class is a blueprint or prototype from which objects are created
 		- Object : Istanza di una classe creata per usare i campi e i metodi della classe.
@@ -581,7 +580,6 @@
 		  }
 		  ```
 		- When you define a new interface, you are defining a new reference data type. You can use interface names anywhere you can use any other data type name. If you define a reference variable whose type is an interface, any object you assign to it *must* be an instance of a class that implements the interface.
-		  collapsed:: true
 			- ```java
 			  public Object findLargest(Object object1, Object object2) {
 			     Relatable obj1 = (Relatable)object1;
@@ -593,7 +591,6 @@
 			  }
 			  ```
 		- [Evolving Interfaces](https://docs.oracle.com/javase/tutorial/java/IandI/nogrow.html)
-		  collapsed:: true
 			- ```java
 			  public interface DoIt {
 			     void doSomething(int i, double x);
@@ -1068,4 +1065,9 @@
 	- Inversion of Control
 	- REST
 		- Controller
-- MVC
+- [MVC](https://www.tutorialspoint.com/design_pattern/mvc_pattern.htm)
+  collapsed:: true
+	- **Model** - Model represents an object or POJO carrying data. It can also have logic to update controller if its data changes
+	- **View** - View represents the visualization of the data that model contains
+	- **Controller** - Controller acts on both model and view. It controls the data flow into model object and updates the view whenever data changes. It keeps view and model separate
+- Inversion of Control
