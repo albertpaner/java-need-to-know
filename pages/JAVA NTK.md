@@ -1075,7 +1075,6 @@
 	-
 - [Singleton](https://www.javaboss.it/singleton-design-pattern/)
 - [Spring](https://spring.io/)
-  collapsed:: true
 	- Entity (replaces Bean)
 	- JPA
 	- Dependency Injection
