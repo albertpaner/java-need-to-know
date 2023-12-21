@@ -1078,11 +1078,13 @@
 	- Entity (replaces Bean)
 	- JPA
 	- Spring Container
-	  collapsed:: true
 		- Object Factory
 	- Dependency Injection
+		- **Dependency Inversion Principle**
+			- The client delegates to another object the responsibility of providing its dependencies
 		- **Dependency injection** is a pattern we can use to implement IoC, where the control being inverted is setting an object’s dependencies
 			- **Constructor injection**
+			  collapsed:: true
 				- ```java
 				  public interface Coach {
 				      String getDailyWorkout();
@@ -1111,11 +1113,9 @@
 				      }
 				  }
 				  ```
-		- **Dependency Inversion Principle**
-			- The client delegates to another object the responsibility of providing its dependencies
 	- [IoC | Inversion of Control](https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring)
-	  collapsed:: true
 		- The approach of outsourcing the construction and management of objects
+		- The control of object creation and lifecycle is transferred to the framework, rather than managed by the application code
 	- REST
 	  collapsed:: true
 		- Controller
