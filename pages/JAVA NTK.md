@@ -1091,7 +1091,8 @@
 			          return "Salve Mundi! ";
 			      }
 			  
-			      //new endpoint for "workout"
+			    // new endpoint (:= URI where the RESTful service can be accessed from)
+			    // for "workout"
 			  
 			      @GetMapping("/workout")
 			      public String getDailyWorkout() {
