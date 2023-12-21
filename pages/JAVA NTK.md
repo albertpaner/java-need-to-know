@@ -1073,8 +1073,10 @@
 	- Servlets and JSP (JavaServer Pages) are both technologies used in Java for building web applications
 	- JavaServer Pages (JSP) is a technology for developing web pages that support dynamic content which helps developers insert java code in HTML pages by making use of special JSP tags, most of which start with <% and end with %>. A JSP page is compiled into a Java servlet the first time it is accessed. After that, the generated servlet is used to service the incoming requests
 	-
+- [Annotations](https://docs.oracle.com/javase/tutorial/java/annotations/basics.html)
 - [Singleton](https://www.javaboss.it/singleton-design-pattern/)
 - [Spring](https://spring.io/)
+  collapsed:: true
 	- Entity (replaces Bean)
 	- JPA
 	- Spring Container
@@ -1084,7 +1086,6 @@
 			- The client delegates to another object the responsibility of providing its dependencies
 		- **Dependency injection** is a pattern we can use to implement IoC, where the control being inverted is setting an object’s dependencies
 			- **Constructor injection**
-			  collapsed:: true
 				- ```java
 				  public interface Coach {
 				      String getDailyWorkout();
@@ -1112,6 +1113,11 @@
 				          myCoach = theCoach;
 				      }
 				  }
+				  ```
+				- Behind the scenes 
+				  ```java
+				  Coach theCoach = new CricketCoach;
+				  DemoController demoController = new DemoController(theCoach);
 				  ```
 	- [IoC | Inversion of Control](https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring)
 		- The approach of outsourcing the construction and management of objects
