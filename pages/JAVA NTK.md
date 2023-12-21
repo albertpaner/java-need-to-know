@@ -1056,7 +1056,7 @@
 	- JavaServer Pages (JSP) is a technology for developing web pages that support dynamic content which helps developers insert java code in HTML pages by making use of special JSP tags, most of which start with <% and end with %>. A JSP page is compiled into a Java servlet the first time it is accessed. After that, the generated servlet is used to service the incoming requests
 	-
 - [Singleton](https://www.javaboss.it/singleton-design-pattern/)
-- [Spring](https://start.spring.io/)
+- [Spring](https://spring.io/)
 	- Entity (replaces Bean)
 	- JPA
 	- Dependency Injection
@@ -1078,6 +1078,7 @@
 			  }
 			  
 			  ```
+			- `@GetMapping` annotation maps HTTP GET requests onto specific handler methods. It is a composed annotation that acts as a shortcut for `@RequestMapping(method = RequestMethod.GET)`
 - [MVC](https://www.tutorialspoint.com/design_pattern/mvc_pattern.htm)
   collapsed:: true
 	- ```java
