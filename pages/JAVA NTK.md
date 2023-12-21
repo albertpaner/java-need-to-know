@@ -950,6 +950,12 @@
 		- JSON Web Tokens (JWT) are used for both authentication and authorization in web development.  When a user logs in, the server authenticates the user's credentials and if they are valid, the server generates a JWT that is sent back to the client. This token contains a payload of data, or claims about the user, which could include their user ID, role, or other identifying information.  For subsequent requests, the client sends this token back to the server in the HTTP Authorization header. The server then verifies the token and if it's valid, allows the request to proceed. This is the authorization process. The server knows that the requester is a legitimate user who has previously authenticated and it can also inspect the token's claims to determine if the user has the necessary permissions to perform the requested operation.
 	- [OAuth](https://www.ramotion.com/blog/what-is-oauth-authentification/#:~:text=OAuth%20is%20an%20open%20standard,applications%20without%20compromising%20their%20passwords)
 		-
+- Maven
+	- Dependency Management
+		- Maven will find JARs for you
+	- Building and Running your project
+		- no more build path / classpath issues
+	- Standard Directory Structure
 - Servlet and JSP
   collapsed:: true
 	- [Servlet](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/Servlet.html)
@@ -1060,12 +1066,14 @@
 	-
 - [Singleton](https://www.javaboss.it/singleton-design-pattern/)
 - [Spring](https://spring.io/)
+  collapsed:: true
 	- Entity (replaces Bean)
 	- JPA
 	- Dependency Injection
 		- @Autowired in Spring
 	- Inversion of Control
 	- REST
+	  collapsed:: true
 		- Controller
 			- ```java
 			  import org.springframework.web.bind.annotation.GetMapping;
