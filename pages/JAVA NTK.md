@@ -1064,6 +1064,20 @@
 	- Inversion of Control
 	- REST
 		- Controller
+			- ```java
+			  import org.springframework.web.bind.annotation.GetMapping;
+			  import org.springframework.web.bind.annotation.RestController;
+			  
+			  @RestController
+			  public class FunRestController {
+			      
+			      @GetMapping("/")
+			      public String sayHello() {
+			          return "Salve Mundi! ";
+			      }
+			  }
+			  
+			  ```
 - [MVC](https://www.tutorialspoint.com/design_pattern/mvc_pattern.htm)
   collapsed:: true
 	- ```java
