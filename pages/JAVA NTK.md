@@ -310,6 +310,7 @@
 		  }
 		  ```
 - [Data Types in Java](https://www.javatpoint.com/reference-data-types-in-java)
+  collapsed:: true
 	- primitive
 	  collapsed:: true
 		- boolean
@@ -719,6 +720,7 @@
 			  ```
 		- [TreeMap](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html)                                                                                                                                                               dizionario con chiavi totalmente ordinate con albero binario [Red-Black Tree](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)
 - Keywords
+  collapsed:: true
 	- [static](https://www.geeksforgeeks.org/static-keyword-java/)                                                                                                                                                         Modificatore usato per variabili o metodi propri della classe che rimangono gli stessi per ogni istanza.
 	  collapsed:: true
 		- Per quanto riguarda il 'Memory Management' di variabili e metodi statici, viene allocata memoria una volta solta durante l'esecuzione del programma e tale memoria è condivisa per tutte le istanze
@@ -927,6 +929,7 @@
 		- Update
 		- Delete
 - [Authentication and Authorization](https://docs.oracle.com/en/java/javase/11/security/java-authentication-and-authorization-service-jaas-reference-guide.html#GUID-2A935F5E-0803-411D-B6BC-F8C64D01A25C)
+  collapsed:: true
 	- Authentication is the process of verifying who a user is, while Authorization is about verifying what they have access to
 	- [JWT]((https://www.baeldung.com/java-json-web-tokens-jjwt))
 	  collapsed:: true
@@ -947,8 +950,8 @@
 		  ```
 		- JSON Web Tokens (JWT) are used for both authentication and authorization in web development.  When a user logs in, the server authenticates the user's credentials and if they are valid, the server generates a JWT that is sent back to the client. This token contains a payload of data, or claims about the user, which could include their user ID, role, or other identifying information.  For subsequent requests, the client sends this token back to the server in the HTTP Authorization header. The server then verifies the token and if it's valid, allows the request to proceed. This is the authorization process. The server knows that the requester is a legitimate user who has previously authenticated and it can also inspect the token's claims to determine if the user has the necessary permissions to perform the requested operation.
 	- [OAuth](https://www.ramotion.com/blog/what-is-oauth-authentification/#:~:text=OAuth%20is%20an%20open%20standard,applications%20without%20compromising%20their%20passwords)
-		-
 - Maven
+  collapsed:: true
 	- Dependency Management
 		- Maven will find JARs for you
 	- Building and Running your project
@@ -1072,11 +1075,32 @@
 	-
 - [Singleton](https://www.javaboss.it/singleton-design-pattern/)
 - [Spring](https://spring.io/)
+  collapsed:: true
 	- Entity (replaces Bean)
 	- JPA
 	- Dependency Injection
+		- **Dependency injection** is a pattern we can use to implement IoC, where the control being inverted is setting an object’s dependencies
+			- Here’s how we would create an object dependency in traditional programming 
+			  ```java
+			  public class Store {
+			      private Item item;
+			      public Store() {
+			          item = new ItemImpl1();    
+			      }
+			  }
+			  ```
+			- By using DI, we can rewrite the example without specifying the implementation of the *Item* that we want 
+			  ```java
+			  public class Store {
+			      private Item item;
+			      public Store(Item item) {
+			          this.item = item;
+			      }
+			  }
+			  ```
 		- @Autowired in Spring
-	- Inversion of Control
+	- [IoC | Inversion of Control](https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring)
+		- The approach of outsourcing the construction and management of objects
 	- REST
 		- Controller
 			- ```java
@@ -1200,26 +1224,5 @@
 		     public void updateView(){				
 		        view.printStudentDetails(model.getName(), model.getRollNo());
 		     }	
-		  }
-		  ```
-- [IoC | Inversion of Control](https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring)
-  collapsed:: true
-	- **Dependency injection** is a pattern we can use to implement IoC, where the control being inverted is setting an object’s dependencies
-		- Here’s how we would create an object dependency in traditional programming 
-		  ```java
-		  public class Store {
-		      private Item item;
-		      public Store() {
-		          item = new ItemImpl1();    
-		      }
-		  }
-		  ```
-		- By using DI, we can rewrite the example without specifying the implementation of the *Item* that we want 
-		  ```java
-		  public class Store {
-		      private Item item;
-		      public Store(Item item) {
-		          this.item = item;
-		      }
 		  }
 		  ```
