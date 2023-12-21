@@ -1,5 +1,4 @@
-- Cardini O.O.P.                                                                                                                                                      [Four main object-oriented programming concepts of Java](https://www.geeksforgeeks.org/four-main-object-oriented-programming-concepts-of-java/)
-  collapsed:: true
+- O.O.P.                                                                                                                                                            [Four main object-oriented programming concepts of Java](https://www.geeksforgeeks.org/four-main-object-oriented-programming-concepts-of-java/)
 	- 1) Abstraction | Astrazione                                                                                                                 
 	  collapsed:: true
 	  [What is abstraction in Java](https://www.softwaretestinghelp.com/what-is-abstraction-in-java/)                                                                                                       
@@ -951,11 +950,16 @@
 	- [OAuth](https://www.ramotion.com/blog/what-is-oauth-authentification/#:~:text=OAuth%20is%20an%20open%20standard,applications%20without%20compromising%20their%20passwords)
 		-
 - Maven
+  collapsed:: true
 	- Dependency Management
 		- Maven will find JARs for you
 	- Building and Running your project
 		- no more build path / classpath issues
 	- Standard Directory Structure
+	- POM
+		- Project metadata
+		- dependencies
+		- plugins
 - Servlet and JSP
   collapsed:: true
 	- [Servlet](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/Servlet.html)
