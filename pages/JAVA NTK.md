@@ -1078,7 +1078,7 @@
 			  }
 			  
 			  ```
-			- `@GetMapping` annotation maps HTTP GET requests onto specific handler methods. It is a composed annotation that acts as a shortcut for `@RequestMapping(method = RequestMethod.GET)`
+			- The `@GetMapping` maps a `/` root path from a GET request to the `sayHello` method
 - [MVC](https://www.tutorialspoint.com/design_pattern/mvc_pattern.htm)
   collapsed:: true
 	- ```java
