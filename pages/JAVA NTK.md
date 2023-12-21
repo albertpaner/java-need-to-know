@@ -1,4 +1,5 @@
 - O.O.P.                                                                                                                                                            [Four main object-oriented programming concepts of Java](https://www.geeksforgeeks.org/four-main-object-oriented-programming-concepts-of-java/)
+  collapsed:: true
 	- 1) Abstraction | Astrazione                                                                                                                 
 	  collapsed:: true
 	  [What is abstraction in Java](https://www.softwaretestinghelp.com/what-is-abstraction-in-java/)                                                                                                       
@@ -309,7 +310,6 @@
 		  }
 		  ```
 - [Data Types in Java](https://www.javatpoint.com/reference-data-types-in-java)
-  collapsed:: true
 	- primitive
 	  collapsed:: true
 		- boolean
@@ -323,8 +323,53 @@
 	- reference
 		- Class
 		- Interface
-		-
-- Classi e Interfacce
+		- [enum](https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html)
+		  collapsed:: true
+			- An *enum type* is a special data type that enables for a variable to be a set of predefined constants. The variable must be equal to one of the values that have been predefined for it. Common examples include compass directions (values of NORTH, SOUTH, EAST, and WEST) and the days of the week.
+			- ```java
+			  public enum Planet {
+			      MERCURY (3.303e+23, 2.4397e6),
+			      VENUS   (4.869e+24, 6.0518e6),
+			      EARTH   (5.976e+24, 6.37814e6),
+			      MARS    (6.421e+23, 3.3972e6),
+			      JUPITER (1.9e+27,   7.1492e7),
+			      SATURN  (5.688e+26, 6.0268e7),
+			      URANUS  (8.686e+25, 2.5559e7),
+			      NEPTUNE (1.024e+26, 2.4746e7);
+			  
+			      private final double mass;   // in kilograms
+			      private final double radius; // in meters
+			      Planet(double mass, double radius) {
+			          this.mass = mass;
+			          this.radius = radius;
+			      }
+			      private double mass() { return mass; }
+			      private double radius() { return radius; }
+			  
+			      // universal gravitational constant  (m3 kg-1 s-2)
+			      public static final double G = 6.67300E-11;
+			  
+			      double surfaceGravity() {
+			          return G * mass / (radius * radius);
+			      }
+			      double surfaceWeight(double otherMass) {
+			          return otherMass * surfaceGravity();
+			      }
+			      public static void main(String[] args) {
+			          if (args.length != 1) {
+			              System.err.println("Usage: java Planet <earth_weight>");
+			              System.exit(-1);
+			          }
+			          double earthWeight = Double.parseDouble(args[0]);
+			          double mass = earthWeight/EARTH.surfaceGravity();
+			          for (Planet p : Planet.values())
+			             System.out.printf("Your weight on %s is %f%n",
+			                               p, p.surfaceWeight(mass));
+			      }
+			  }
+			  ```
+		- record
+- Classes and Interfaces
   collapsed:: true
 	- Class                                                                                                                                              
 	  [class](https://www.geeksforgeeks.org/classes-objects-java/)                                                                                                                                                                                          A class is a blueprint or prototype from which objects are created
@@ -619,7 +664,7 @@
 				  ```
 	- [Abstract class and Interface](https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html)
 		- Abstract classes are similar to interfaces. You cannot instantiate them, and they may contain a mix of methods declared with or without an implementation. However, with abstract classes, you can declare fields that are not static and final, and define public, protected, and private concrete methods. With interfaces, all fields are automatically public, static, and final, and all methods that you declare or define (as default methods) are public. In addition, you can extend only one class, whether or not it is abstract, whereas you can implement any number of interfaces.
-- Strutture Dati Comuni                                                                                                                                                                           [Data Structures Java](https://www.javatpoint.com/data-structures-in-java)
+- [Data Structures Java](https://www.javatpoint.com/data-structures-in-java)
   collapsed:: true
 	- [Iterable](https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html)                                                                                                                                                        Permette di usare il for-each per gli oggetti della classe che la implementa
 		- [Collection](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html)                                                                                                                                                              Rappresenta un gruppo di oggetti o elementi
@@ -674,7 +719,6 @@
 			  ```
 		- [TreeMap](https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html)                                                                                                                                                               dizionario con chiavi totalmente ordinate con albero binario [Red-Black Tree](https://en.wikipedia.org/wiki/Red%E2%80%93black_tree)
 - Keywords
-  collapsed:: true
 	- [static](https://www.geeksforgeeks.org/static-keyword-java/)                                                                                                                                                         Modificatore usato per variabili o metodi propri della classe che rimangono gli stessi per ogni istanza.
 	  collapsed:: true
 		- Per quanto riguarda il 'Memory Management' di variabili e metodi statici, viene allocata memoria una volta solta durante l'esecuzione del programma e tale memoria è condivisa per tutte le istanze
@@ -724,51 +768,7 @@
 		- [public](https://www.javatpoint.com/public-keyword-in-java)
 		- [private](https://www.javatpoint.com/private-keyword-in-java)
 		- protected
-	- [enum](https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html)
-		- An *enum type* is a special data type that enables for a variable to be a set of predefined constants. The variable must be equal to one of the values that have been predefined for it. Common examples include compass directions (values of NORTH, SOUTH, EAST, and WEST) and the days of the week.
-		- ```c++
-		  public enum Planet {
-		      MERCURY (3.303e+23, 2.4397e6),
-		      VENUS   (4.869e+24, 6.0518e6),
-		      EARTH   (5.976e+24, 6.37814e6),
-		      MARS    (6.421e+23, 3.3972e6),
-		      JUPITER (1.9e+27,   7.1492e7),
-		      SATURN  (5.688e+26, 6.0268e7),
-		      URANUS  (8.686e+25, 2.5559e7),
-		      NEPTUNE (1.024e+26, 2.4746e7);
-		  
-		      private final double mass;   // in kilograms
-		      private final double radius; // in meters
-		      Planet(double mass, double radius) {
-		          this.mass = mass;
-		          this.radius = radius;
-		      }
-		      private double mass() { return mass; }
-		      private double radius() { return radius; }
-		  
-		      // universal gravitational constant  (m3 kg-1 s-2)
-		      public static final double G = 6.67300E-11;
-		  
-		      double surfaceGravity() {
-		          return G * mass / (radius * radius);
-		      }
-		      double surfaceWeight(double otherMass) {
-		          return otherMass * surfaceGravity();
-		      }
-		      public static void main(String[] args) {
-		          if (args.length != 1) {
-		              System.err.println("Usage: java Planet <earth_weight>");
-		              System.exit(-1);
-		          }
-		          double earthWeight = Double.parseDouble(args[0]);
-		          double mass = earthWeight/EARTH.surfaceGravity();
-		          for (Planet p : Planet.values())
-		             System.out.printf("Your weight on %s is %f%n",
-		                               p, p.surfaceWeight(mass));
-		      }
-		  }
-		  ```
-- [for](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html) o [for-each](https://www.javatpoint.com/for-each-loop)?
+- [for](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html) or [for-each](https://www.javatpoint.com/for-each-loop)?
   collapsed:: true
 	- Il classico 'for' è usato per iterare sugli elementi di una collezione usando un indice posizionale
 	- Il 'for-each' itera sugli elementi senza aver bisogno di un indice
@@ -927,7 +927,6 @@
 		- Update
 		- Delete
 - [Authentication and Authorization](https://docs.oracle.com/en/java/javase/11/security/java-authentication-and-authorization-service-jaas-reference-guide.html#GUID-2A935F5E-0803-411D-B6BC-F8C64D01A25C)
-  collapsed:: true
 	- Authentication is the process of verifying who a user is, while Authorization is about verifying what they have access to
 	- [JWT]((https://www.baeldung.com/java-json-web-tokens-jjwt))
 	  collapsed:: true
@@ -950,7 +949,6 @@
 	- [OAuth](https://www.ramotion.com/blog/what-is-oauth-authentification/#:~:text=OAuth%20is%20an%20open%20standard,applications%20without%20compromising%20their%20passwords)
 		-
 - Maven
-  collapsed:: true
 	- Dependency Management
 		- Maven will find JARs for you
 	- Building and Running your project
@@ -959,6 +957,10 @@
 	- POM
 		- Project metadata
 		- dependencies
+			- GAV
+				- Group ID
+				- Artifact ID
+				- Version
 		- plugins
 - Servlet and JSP
   collapsed:: true
@@ -1070,14 +1072,12 @@
 	-
 - [Singleton](https://www.javaboss.it/singleton-design-pattern/)
 - [Spring](https://spring.io/)
-  collapsed:: true
 	- Entity (replaces Bean)
 	- JPA
 	- Dependency Injection
 		- @Autowired in Spring
 	- Inversion of Control
 	- REST
-	  collapsed:: true
 		- Controller
 			- ```java
 			  import org.springframework.web.bind.annotation.GetMapping;
@@ -1085,10 +1085,17 @@
 			  
 			  @RestController
 			  public class FunRestController {
-			      
+			  
 			      @GetMapping("/")
 			      public String sayHello() {
 			          return "Salve Mundi! ";
+			      }
+			  
+			      //new endpoint for "workout"
+			  
+			      @GetMapping("/workout")
+			      public String getDailyWorkout() {
+			          return "Run a hard 5k!";
 			      }
 			  }
 			  
