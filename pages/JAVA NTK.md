@@ -1103,7 +1103,8 @@
 		- All dependency injections for the bean will reference the SAME bean
 - [Spring](https://spring.io/)
 	- **@Entity**
-		- Class <--> Database Table
+	  collapsed:: true
+		- Class <--> Database Table    |    fields <--> Database Columns
 			- ```java
 			  @Entity
 			  @Table(name = "student")
@@ -1175,9 +1176,30 @@
 			  }
 			  
 			  ```
-		- fields <--> Database Columns
+		-
+	- **@Repository**
+		- ```java
+		  @Repository
+		  public class StudentDAOImpl implements StudentDAO {
+		  
+		      private EntityManager entityManager;
+		  
+		      @Autowired
+		      public StudentDAOImpl(EntityManager entityManager) {
+		          this.entityManager = entityManager;
+		      }
+		  
+		      @Override
+		      @Transactional
+		      public void saveStudent(Student student) {
+		          entityManager.persist(student);
+		      }
+		  }
+		  ```
 	- **JPA** Jakarta Persistence API <--- ((6585e29c-10b7-48a5-b5c7-098aacf9c17e))
 		- Standard API for **ORM** Object-Relational-Mapping
+		- JPA Entity Manager and Data Source automatically created by Spring Boot based on application.properties file
+		- We can autowire/inject the JPA Entity Manager into our DAO
 	- Spring Container
 	  collapsed:: true
 		- Object Factory
