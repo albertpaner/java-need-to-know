@@ -773,6 +773,7 @@
 - [Annotations](https://docs.oracle.com/javase/tutorial/java/annotations/basics.html)
   collapsed:: true
 	- [Annotation Processing](https://reflectoring.io/java-annotation-processing/)
+- [Reflection](https://www.baeldung.com/java-reflection)
 - [for](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html) or [for-each](https://www.javatpoint.com/for-each-loop)?
   collapsed:: true
 	- Il classico 'for' è usato per iterare sugli elementi di una collezione usando un indice posizionale
@@ -1078,6 +1079,7 @@
 	-
 - [Singleton](https://www.javaboss.it/singleton-design-pattern/)
 - [Spring](https://spring.io/)
+  collapsed:: true
 	- Entity (replaces Bean)
 	- JPA
 	- Spring Container
@@ -1249,4 +1251,3 @@
 		     }	
 		  }
 		  ```
-- [Reflection](https://www.baeldung.com/java-reflection)
