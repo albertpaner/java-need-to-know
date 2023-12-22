@@ -1079,7 +1079,6 @@
 	-
 - [Singleton](https://www.javaboss.it/singleton-design-pattern/)
 - [Spring](https://spring.io/)
-  collapsed:: true
 	- Entity (replaces Bean)
 	- JPA
 	- Spring Container
@@ -1122,6 +1121,12 @@
 				  Coach theCoach = new CricketCoach;
 				  DemoController demoController = new DemoController(theCoach);
 				  ```
+				- **Autowiring**
+					- Injecting a *Coach* implementation
+					- Spring will scan for *@Components*
+					- Anyone implements the *Coach* interface?
+					- If so, let's inject them. For example: *CricketCoach*
+			- **Setter Injection**
 	- [IoC | Inversion of Control](https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring)
 		- The approach of outsourcing the construction and management of objects
 		- The control of object creation and lifecycle is transferred to the framework, rather than managed by the application code
