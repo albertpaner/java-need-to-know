@@ -1082,12 +1082,34 @@
 	- Entity (replaces Bean)
 	- JPA
 	- Spring Container
+	  collapsed:: true
 		- Object Factory
+	- **@Component** marks the class as a Spring Bean
+		- ```java
+		  import org.springframework.stereotype.Component;
+		  
+		  @Component
+		  public class TrackCoach implements Coach{
+		  
+		              @Override
+		              public String getDailyWorkout() {
+		                  return "Run a hard 5k";
+		              }
+		  }
+		  ```
 	- Dependency Injection
+	  collapsed:: true
 		- **Dependency Inversion Principle**
 			- The client delegates to another object the responsibility of providing its dependencies
 		- **Dependency injection** is a pattern we can use to implement IoC, where the control being inverted is setting an object’s dependencies
+			- **Autowiring**
+				- Injecting a *Coach* implementation
+				- Spring will scan for *@Components*
+				- Anyone implements the *Coach* interface?
+				- If so, let's inject them. For example: *CricketCoach*
+				- What happens if I have multiple Coach implementations?
 			- **Constructor injection**
+				- for *required* dependencies
 				- ```java
 				  public interface Coach {
 				      String getDailyWorkout();
@@ -1121,12 +1143,23 @@
 				  Coach theCoach = new CricketCoach;
 				  DemoController demoController = new DemoController(theCoach);
 				  ```
-				- **Autowiring**
-					- Injecting a *Coach* implementation
-					- Spring will scan for *@Components*
-					- Anyone implements the *Coach* interface?
-					- If so, let's inject them. For example: *CricketCoach*
 			- **Setter Injection**
+				- for *optional* dependencies
+				- ```java
+				      private Coach myCoach;
+				  
+				      @Autowired
+				      public void setMyCoach(Coach theCoach) {
+				          myCoach = theCoach;
+				      }
+				  ```
+				- Behind the scenes : 
+				  ```java
+				  Coach thecoach = new CricketCoach();
+				  DemoController demoController = new DemoController();
+				  demoController.setCoach(theCoach);
+				  ```
+			- Field Injection (deprecated)
 	- [IoC | Inversion of Control](https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring)
 		- The approach of outsourcing the construction and management of objects
 		- The control of object creation and lifecycle is transferred to the framework, rather than managed by the application code
