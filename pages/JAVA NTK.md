@@ -1098,10 +1098,8 @@
 		  }
 		  ```
 	- Dependency Injection
-		- **Dependency Inversion Principle**
-			- The client delegates to another object the responsibility of providing its dependencies
 		- **Dependency injection** is a pattern we can use to implement IoC, where the control being inverted is setting an object’s dependencies
-			- **Autowiring**
+			- **@Autowired**
 				- Injecting a *Coach* implementation
 				- Spring will scan for *@Components*
 				- Anyone implements the *Coach* interface?
