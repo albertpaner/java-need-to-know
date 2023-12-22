@@ -770,6 +770,9 @@
 		- [public](https://www.javatpoint.com/public-keyword-in-java)
 		- [private](https://www.javatpoint.com/private-keyword-in-java)
 		- protected
+- [Annotations](https://docs.oracle.com/javase/tutorial/java/annotations/basics.html)
+  collapsed:: true
+	- [Annotation Processing](https://reflectoring.io/java-annotation-processing/)
 - [for](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html) or [for-each](https://www.javatpoint.com/for-each-loop)?
   collapsed:: true
 	- Il classico 'for' è usato per iterare sugli elementi di una collezione usando un indice posizionale
@@ -1073,10 +1076,8 @@
 	- Servlets and JSP (JavaServer Pages) are both technologies used in Java for building web applications
 	- JavaServer Pages (JSP) is a technology for developing web pages that support dynamic content which helps developers insert java code in HTML pages by making use of special JSP tags, most of which start with <% and end with %>. A JSP page is compiled into a Java servlet the first time it is accessed. After that, the generated servlet is used to service the incoming requests
 	-
-- [Annotations](https://docs.oracle.com/javase/tutorial/java/annotations/basics.html)
 - [Singleton](https://www.javaboss.it/singleton-design-pattern/)
 - [Spring](https://spring.io/)
-  collapsed:: true
 	- Entity (replaces Bean)
 	- JPA
 	- Spring Container
@@ -1248,3 +1249,4 @@
 		     }	
 		  }
 		  ```
+- [Reflection](https://www.baeldung.com/java-reflection)
