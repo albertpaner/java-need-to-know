@@ -1078,6 +1078,27 @@
 	- JavaServer Pages (JSP) is a technology for developing web pages that support dynamic content which helps developers insert java code in HTML pages by making use of special JSP tags, most of which start with <% and end with %>. A JSP page is compiled into a Java servlet the first time it is accessed. After that, the generated servlet is used to service the incoming requests
 	-
 - [Singleton](https://www.javaboss.it/singleton-design-pattern/)
+	- ```java
+	  public class BasicSingleton {
+	     
+	      private static BasicSingleton instance = null; 
+	  
+	      private BasicSingleton() {} 
+	  
+	      public static BasicSingleton getInstance() {
+	         
+	          if (instance == null) {
+	              instance = new BasicSingleton();
+	          }
+	          return instance;
+	      }
+	  
+	  }
+	  ```
+	- Default scope of Spring Beans is Singleton
+		- Spring Container creates only one instance of the bean
+		- It is cached in memory
+		- All dependency injections for the bean will reference the SAME bean
 - [Spring](https://spring.io/)
 	- Entity (replaces Bean)
 	- JPA
