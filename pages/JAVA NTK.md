@@ -1098,7 +1098,6 @@
 		  }
 		  ```
 	- Dependency Injection
-	  collapsed:: true
 		- **Dependency Inversion Principle**
 			- The client delegates to another object the responsibility of providing its dependencies
 		- **Dependency injection** is a pattern we can use to implement IoC, where the control being inverted is setting an object’s dependencies
@@ -1108,6 +1107,23 @@
 				- Anyone implements the *Coach* interface?
 				- If so, let's inject them. For example: *CricketCoach*
 				- What happens if I have multiple Coach implementations?
+					- ```java
+					     @Autowired
+					      public DemoController(@Qualifier("cricketCoach") Coach theCoach) {
+					          myCoach = theCoach;
+					      }
+					  ```
+					- ```java
+					  @Component
+					  @Primary
+					  public class TrackCoach implements Coach{
+					  
+					              @Override
+					              public String getDailyWorkout() {
+					                  return "Run a hard 5k";
+					              }
+					  }
+					  ```
 			- **Constructor injection**
 				- for *required* dependencies
 				- ```java
