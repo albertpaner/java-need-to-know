@@ -1078,6 +1078,7 @@
 	- JavaServer Pages (JSP) is a technology for developing web pages that support dynamic content which helps developers insert java code in HTML pages by making use of special JSP tags, most of which start with <% and end with %>. A JSP page is compiled into a Java servlet the first time it is accessed. After that, the generated servlet is used to service the incoming requests
 	-
 - [Singleton](https://www.javaboss.it/singleton-design-pattern/)
+  collapsed:: true
 	- ```java
 	  public class BasicSingleton {
 	     
@@ -1101,7 +1102,8 @@
 		- It is cached in memory
 		- All dependency injections for the bean will reference the SAME bean
 - [Spring](https://spring.io/)
-	- Entity
+  collapsed:: true
+	- **@Entity**
 	- JPA
 	- Spring Container
 	  collapsed:: true
@@ -1122,6 +1124,7 @@
 		  ```
 	- Spring Bean
 		- Scope
+		  collapsed:: true
 			- Singleton (default) 
 			  id:: 6585da9e-9cbf-4525-80cd-51a50af6db8e
 			- Prototype
@@ -1137,6 +1140,8 @@
 			  }
 			  
 			  ```
+		- **@Bean**
+			- Make an existing third-party class available to Spring framework
 	- Dependency Injection
 	  collapsed:: true
 		- **Dependency injection** is a pattern we can use to implement IoC, where the control being inverted is setting an object’s dependencies
@@ -1216,6 +1221,7 @@
 				  ```
 			- Field Injection (deprecated)
 	- [IoC | Inversion of Control](https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring)
+	  collapsed:: true
 		- The approach of outsourcing the construction and management of objects
 		- The control of object creation and lifecycle is transferred to the framework, rather than managed by the application code
 	- REST
@@ -1344,3 +1350,6 @@
 		     }	
 		  }
 		  ```
+- **Hibernate**
+	- framework for persiting / saving Java objects in a database
+	- The developer defines mapping between Java class and database table (ORM)
