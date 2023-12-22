@@ -1096,16 +1096,18 @@
 	  }
 	  ```
 	- Default scope of Spring Beans is Singleton
+		- ((6585da9e-9cbf-4525-80cd-51a50af6db8e))
 		- Spring Container creates only one instance of the bean
 		- It is cached in memory
 		- All dependency injections for the bean will reference the SAME bean
 - [Spring](https://spring.io/)
-	- Entity (replaces Bean)
+	- Entity
 	- JPA
 	- Spring Container
 	  collapsed:: true
 		- Object Factory
 	- **@Component** marks the class as a Spring Bean
+	  collapsed:: true
 		- ```java
 		  import org.springframework.stereotype.Component;
 		  
@@ -1118,7 +1120,25 @@
 		              }
 		  }
 		  ```
+	- Spring Bean
+		- Scope
+			- Singleton (default) 
+			  id:: 6585da9e-9cbf-4525-80cd-51a50af6db8e
+			- Prototype
+			- ```java
+			  @Component
+			  @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+			  public class CricketCoach implements Coach{
+			  
+			          @Override
+			          public String getDailyWorkout() {
+			              return "Practice fast bowling for 15 minutes";
+			          }
+			  }
+			  
+			  ```
 	- Dependency Injection
+	  collapsed:: true
 		- **Dependency injection** is a pattern we can use to implement IoC, where the control being inverted is setting an object’s dependencies
 			- **@Autowired**
 				- Injecting a *Coach* implementation
