@@ -1102,9 +1102,9 @@
 		- It is cached in memory
 		- All dependency injections for the bean will reference the SAME bean
 - [Spring](https://spring.io/)
-  collapsed:: true
 	- **@Entity**
-	- JPA
+	- **JPA** Jakarta Persistence API <--- ((6585e29c-10b7-48a5-b5c7-098aacf9c17e))
+		- Standard API for **ORM** Object-Relational-Mapping
 	- Spring Container
 	  collapsed:: true
 		- Object Factory
@@ -1351,5 +1351,7 @@
 		  }
 		  ```
 - **Hibernate**
+  id:: 6585e29c-10b7-48a5-b5c7-098aacf9c17e
 	- framework for persiting / saving Java objects in a database
 	- The developer defines mapping between Java class and database table (ORM)
+	- implements JPA Spec
