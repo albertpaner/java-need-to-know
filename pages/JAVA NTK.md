@@ -1379,8 +1379,7 @@
 	  collapsed:: true
 		- The approach of outsourcing the construction and management of objects
 		- The control of object creation and lifecycle is transferred to the framework, rather than managed by the application code
-	- REST
-	  collapsed:: true
+	- **REST** REpresentational State Transfer
 		- Controller
 			- ```java
 			  import org.springframework.web.bind.annotation.GetMapping;
@@ -1511,3 +1510,4 @@
 	- The developer defines mapping between Java class and database table (ORM)
 	- implements JPA Spec
 	- uses JDBC in the background
+	- creates database tables from java annotations
