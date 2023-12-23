@@ -1155,7 +1155,6 @@
 		- It is cached in memory
 		- All dependency injections for the bean will reference the SAME bean
 - [Spring](https://spring.io/)
-  collapsed:: true
 	- **@Entity**
 	  collapsed:: true
 		- Class <--> Database Table    |    fields <--> Database Columns
@@ -1462,6 +1461,9 @@
 			  ```
 			- The `@RestController` annotation tells Spring that this class will be used to handle HTTP requests. It's a hint to Spring to convert the return values of methods in this class into HTTP response bodies.
 			- The `@GetMapping("/")` annotation is a composed annotation that acts as a shortcut for `@RequestMapping(method = RequestMethod.GET)`. It's used to map HTTP GET requests onto specific handler methods. In this case, it's mapping the root URL `("/")` to the `sayHello` method.
+		- Client Tool
+			- Send HTTP requests to the REST Web Service - API
+			- **Postman**
 - [MVC](https://www.tutorialspoint.com/design_pattern/mvc_pattern.htm)
   collapsed:: true
 	- ```java
