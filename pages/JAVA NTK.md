@@ -1178,6 +1178,7 @@
 			  ```
 		-
 	- **@Repository**
+	  collapsed:: true
 		- ```java
 		  public interface StudentDAO {
 		    
@@ -1192,6 +1193,8 @@
 		    	void updateStudent(Student student);
 		    
 		  	void deleteStudentById(int id);
+		    
+		      int deleteAll();
 		  }
 		  
 		  ```
@@ -1242,6 +1245,12 @@
 		          entityManager.createQuery("delete from Student where id=:theId")
 		                  .setParameter("theId", id)
 		                  .executeUpdate();
+		      }
+		    
+		      @Override
+		      @Transactional
+		      public int deleteAll() {
+		        return entityManager.createQuery("delete from Student").executeUpdate();
 		      }
 		  }
 		  ```
