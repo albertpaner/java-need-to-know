@@ -957,6 +957,11 @@
 	    			 }
 	  }
 	  ```
+	- Data Binding JSON <--> POJO
+	  id:: 6586f09d-98e0-49c0-9dc7-75111b0f8e9f
+		- **Jackson**
+		- JSON -> POJO ...call setXXX methods
+		- POJO -> JSON ...call getXXX methods
 - [Authentication and Authorization](https://docs.oracle.com/en/java/javase/11/security/java-authentication-and-authorization-service-jaas-reference-guide.html#GUID-2A935F5E-0803-411D-B6BC-F8C64D01A25C)
   collapsed:: true
 	- Authentication is the process of verifying who a user is, while Authorization is about verifying what they have access to
@@ -1156,7 +1161,6 @@
 		- It is cached in memory
 		- All dependency injections for the bean will reference the SAME bean
 - [Spring](https://spring.io/)
-  collapsed:: true
 	- **@Entity**
 	  collapsed:: true
 		- Class <--> Database Table    |    fields <--> Database Columns
@@ -1434,7 +1438,13 @@
 	  collapsed:: true
 		- The approach of outsourcing the construction and management of objects
 		- The control of object creation and lifecycle is transferred to the framework, rather than managed by the application code
+	- automatically handle Jackson Integration ((6586f09d-98e0-49c0-9dc7-75111b0f8e9f))
+		- JSON data passed to REST controller converted to POJO
+		- POJO returned from REST controller converted to JSON
+	- ((65860759-1cf9-434e-8b9b-43ab191bdb20)) controller
 - **REST**
+  id:: 65860759-1cf9-434e-8b9b-43ab191bdb20
+  collapsed:: true
 	- REpresentational State Transfer
 	- lightweight approach for communicating between applications.. we can make REST API calls over HTTP.. is language-independent
 	  id:: 6586c2d9-b10c-46a4-80ba-a2ba5b676ac8
