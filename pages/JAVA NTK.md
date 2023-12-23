@@ -938,12 +938,21 @@
 	- language independent.. not just for JavaScript
 	- Curley braces define objects
 	- Object members are name-value pairs
+	- can be nested
 	- ```json
 	  {
 	    "id": 14,
 	    "firstName": "Mario",
 	    "lastName": "Rossi",
-	    "active": true
+	    "active": true,
+	    "courses": null,
+	    "languages": ["Java", "C#", "Python"],
+	    "address": {
+	      			"street" : "100 Main St";
+	      			"city" : "Philadelphia",
+	      			"state" : "Pennsylvania",
+	                  "country" : "USA"
+	    			 }
 	  }
 	  ```
 -
