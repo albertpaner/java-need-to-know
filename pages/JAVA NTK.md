@@ -1181,6 +1181,8 @@
 		- ```java
 		  public interface StudentDAO {
 		    
+		    	List<Student> findByLastName(String lastName);
+		    
 		      List<Student> findAll();
 		  
 		      Student findById(int id);
@@ -1199,6 +1201,14 @@
 		      public StudentDAOImpl(EntityManager entityManager) {
 		          this.entityManager = entityManager;
 		      }
+		    
+		    
+		  	@Override
+		      public List<Student> findByLastName(String lastName) {
+		          return entityManager.createQuery("from Student where lastName=:theData", Student.class)
+		                  .setParameter("theData", lastName)
+		                  .getResultList();
+		      }  
 		    
 		      @Override
 		      public List<Student> findAll() {
