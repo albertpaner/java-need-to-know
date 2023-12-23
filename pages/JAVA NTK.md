@@ -1161,6 +1161,7 @@
 		- It is cached in memory
 		- All dependency injections for the bean will reference the SAME bean
 - [Spring](https://spring.io/)
+  collapsed:: true
 	- **@Entity**
 	  collapsed:: true
 		- Class <--> Database Table    |    fields <--> Database Columns
