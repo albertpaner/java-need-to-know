@@ -1435,20 +1435,20 @@
 		- The approach of outsourcing the construction and management of objects
 		- The control of object creation and lifecycle is transferred to the framework, rather than managed by the application code
 - **REST**
-  collapsed:: true
 	- REpresentational State Transfer
 	- lightweight approach for communicating between applications.. we can make REST API calls over HTTP.. is language-independent
+	  id:: 6586c2d9-b10c-46a4-80ba-a2ba5b676ac8
 	- leverage HTTP methods for CRUD operations
 	- Controller
-	  collapsed:: true
 		- ```java
 		  import org.springframework.web.bind.annotation.GetMapping;
 		  import org.springframework.web.bind.annotation.RestController;
 		  
 		  @RestController
+		  @RequestMapping("/test")
 		  public class FunRestController {
 		  
-		      @GetMapping("/")
+		      @GetMapping("/hello")
 		      public String sayHello() {
 		          return "Salve Mundi! ";
 		      }
@@ -1465,6 +1465,7 @@
 		  ```
 		- The `@RestController` annotation tells Spring that this class will be used to handle HTTP requests. It's a hint to Spring to convert the return values of methods in this class into HTTP response bodies.
 		- The `@GetMapping("/")` annotation is a composed annotation that acts as a shortcut for `@RequestMapping(method = RequestMethod.GET)`. It's used to map HTTP GET requests onto specific handler methods. In this case, it's mapping the root URL `("/")` to the `sayHello` method.
+		- We can now access the **REST endpoint** at "/test/hello"
 	- Client Tool
 		- Send HTTP requests to the REST Web Service - API
 		- **Postman**
