@@ -932,12 +932,28 @@
 		- Read
 		- Update
 		- Delete
+- **JSON**((658154ea-6845-4dc5-a284-e738f482f098))
+	- JavaScript Object Notation
+	- lightweight data format for storing and exchanging data
+	- language independent.. not just for JavaScript
+	- Curley braces define objects
+	- Object members are name-value pairs
+	- ```json
+	  {
+	    "id": 14,
+	    "firstName": "Mario",
+	    "lastName": "Rossi",
+	    "active": true
+	  }
+	  ```
+-
 - [Authentication and Authorization](https://docs.oracle.com/en/java/javase/11/security/java-authentication-and-authorization-service-jaas-reference-guide.html#GUID-2A935F5E-0803-411D-B6BC-F8C64D01A25C)
   collapsed:: true
 	- Authentication is the process of verifying who a user is, while Authorization is about verifying what they have access to
 	- [JWT]((https://www.baeldung.com/java-json-web-tokens-jjwt))
 		- JWTs (pronounced “jots”) are URL-safe, encoded, cryptographically signed (sometimes encrypted) strings that we can use as tokens in a variety of applications
-		- ```json
+		- id:: 658154ea-6845-4dc5-a284-e738f482f098
+		  ```json
 		  <input name="_csrf" type="hidden" 
 		      value="HEADER ({"alg":"HS256"}) .
 		  			PAYLOAD ( ({		CLAIMS
