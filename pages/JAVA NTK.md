@@ -999,8 +999,7 @@
 	- [Servlet](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/Servlet.html)
 		- Programma scritto in Java e residente su un server, in grado di gestire le richieste generate da uno o più client, attraverso uno scambio di messaggi tra il server ed i client stessi che hanno effettuato la richiesta. Tipicamente sono collocate all'interno di Application Server o Web Application Server come, ad esempio, Tomcat.
 		- [HttpServlet](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServlet.html)
-			- Parameters
-			  collapsed:: true
+			- Parameters ((6586c95e-371d-4fe2-ae46-8435e4de07bc))
 				- `req` - an [HttpServletRequest](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServletRequest.html) object that contains the request the client has made of the servlet
 				  collapsed:: true
 					- [getAttribute](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/ServletRequest.html#getAttribute-java.lang.String-)
@@ -1112,6 +1111,25 @@
 	- **POST** <-> **CREATE** a new entity
 	- **PUT** <-> **UPDATE** an existing entity
 	- **DELETE** <-> **DELETE** an existing entity
+- **HTTP Messages**
+  id:: 6586c95e-371d-4fe2-ae46-8435e4de07bc
+	- **HTTP Request**
+		- Request line: the HTTP command
+		- Header variables: Request metadata
+		- Message body: contents of message (as ((6586c49b-1d63-4fa1-8633-a237b80c00d6)) )
+	- **HTTP Response**
+		- Response line: server protocol and status code
+			- status code
+				- 100-199 Informational
+				- 200-299 Successful
+				- 300-399 Redirection
+				- 400-499 Client Error
+					- 401 Authentication Required
+					- 404 File Not Found
+				- 500-599 Server Error
+					- 500 Internal Server Error
+		- Header variables: response metadata
+		- Message body: contents of message
 - [Singleton](https://www.javaboss.it/singleton-design-pattern/)
   collapsed:: true
 	- ```java
