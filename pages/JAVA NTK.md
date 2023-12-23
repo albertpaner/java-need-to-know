@@ -936,7 +936,6 @@
   collapsed:: true
 	- Authentication is the process of verifying who a user is, while Authorization is about verifying what they have access to
 	- [JWT]((https://www.baeldung.com/java-json-web-tokens-jjwt))
-	  collapsed:: true
 		- JWTs (pronounced “jots”) are URL-safe, encoded, cryptographically signed (sometimes encrypted) strings that we can use as tokens in a variety of applications
 		- ```json
 		  <input name="_csrf" type="hidden" 
@@ -1102,6 +1101,7 @@
 		- It is cached in memory
 		- All dependency injections for the bean will reference the SAME bean
 - [Spring](https://spring.io/)
+  collapsed:: true
 	- **@Entity**
 	  collapsed:: true
 		- Class <--> Database Table    |    fields <--> Database Columns
@@ -1380,6 +1380,7 @@
 		- The approach of outsourcing the construction and management of objects
 		- The control of object creation and lifecycle is transferred to the framework, rather than managed by the application code
 	- **REST** REpresentational State Transfer
+		- lightweight approach for communicating between applications.. we can make REST API calls over HTTP.. is language-independent
 		- Controller
 			- ```java
 			  import org.springframework.web.bind.annotation.GetMapping;
@@ -1506,6 +1507,7 @@
 		  ```
 - **Hibernate**
   id:: 6585e29c-10b7-48a5-b5c7-098aacf9c17e
+  collapsed:: true
 	- framework for persiting / saving Java objects in a database
 	- The developer defines mapping between Java class and database table (ORM)
 	- implements JPA Spec
