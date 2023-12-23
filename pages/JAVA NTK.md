@@ -1180,6 +1180,8 @@
 	- **@Repository**
 		- ```java
 		  public interface StudentDAO {
+		    
+		      List<Student> findAll();
 		  
 		      Student findById(int id);
 		    
@@ -1197,6 +1199,11 @@
 		      public StudentDAOImpl(EntityManager entityManager) {
 		          this.entityManager = entityManager;
 		      }
+		    
+		      @Override
+		      public List<Student> findAll() {
+		          return entityManager.createQuery("from Student", Student.class).getResultList();
+		      }
 		  
 		  	@Override
 		      public Student findById(int id) {
@@ -1211,10 +1218,10 @@
 		  }
 		  ```
 	- **JPA** Jakarta Persistence API <--- ((6585e29c-10b7-48a5-b5c7-098aacf9c17e))
-	  collapsed:: true
 		- Standard API for **ORM** Object-Relational-Mapping
 		- JPA Entity Manager and Data Source automatically created by Spring Boot based on application.properties file
 		- We can autowire/inject the JPA Entity Manager into our DAO
+		- **JPQL**
 	- Spring Container
 	  collapsed:: true
 		- Object Factory
