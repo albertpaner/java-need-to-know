@@ -1113,6 +1113,7 @@
 	- **DELETE** <-> **DELETE** an existing entity
 - **HTTP Messages**
   id:: 6586c95e-371d-4fe2-ae46-8435e4de07bc
+  collapsed:: true
 	- **HTTP Request**
 		- Request line: the HTTP command
 		- Header variables: Request metadata
@@ -1155,6 +1156,7 @@
 		- It is cached in memory
 		- All dependency injections for the bean will reference the SAME bean
 - [Spring](https://spring.io/)
+  collapsed:: true
 	- **@Entity**
 	  collapsed:: true
 		- Class <--> Database Table    |    fields <--> Database Columns
@@ -1432,38 +1434,40 @@
 	  collapsed:: true
 		- The approach of outsourcing the construction and management of objects
 		- The control of object creation and lifecycle is transferred to the framework, rather than managed by the application code
-	- **REST** REpresentational State Transfer
-		- lightweight approach for communicating between applications.. we can make REST API calls over HTTP.. is language-independent
-		- leverage HTTP methods for CRUD operations
-		- Controller
-		  collapsed:: true
-			- ```java
-			  import org.springframework.web.bind.annotation.GetMapping;
-			  import org.springframework.web.bind.annotation.RestController;
-			  
-			  @RestController
-			  public class FunRestController {
-			  
-			      @GetMapping("/")
-			      public String sayHello() {
-			          return "Salve Mundi! ";
-			      }
-			  
-			    // new endpoint (:= URI where the RESTful service can be accessed from)
-			    // for "workout"
-			  
-			      @GetMapping("/workout")
-			      public String getDailyWorkout() {
-			          return "Run a hard 5k!";
-			      }
-			  }
-			  
-			  ```
-			- The `@RestController` annotation tells Spring that this class will be used to handle HTTP requests. It's a hint to Spring to convert the return values of methods in this class into HTTP response bodies.
-			- The `@GetMapping("/")` annotation is a composed annotation that acts as a shortcut for `@RequestMapping(method = RequestMethod.GET)`. It's used to map HTTP GET requests onto specific handler methods. In this case, it's mapping the root URL `("/")` to the `sayHello` method.
-		- Client Tool
-			- Send HTTP requests to the REST Web Service - API
-			- **Postman**
+- **REST**
+  collapsed:: true
+	- REpresentational State Transfer
+	- lightweight approach for communicating between applications.. we can make REST API calls over HTTP.. is language-independent
+	- leverage HTTP methods for CRUD operations
+	- Controller
+	  collapsed:: true
+		- ```java
+		  import org.springframework.web.bind.annotation.GetMapping;
+		  import org.springframework.web.bind.annotation.RestController;
+		  
+		  @RestController
+		  public class FunRestController {
+		  
+		      @GetMapping("/")
+		      public String sayHello() {
+		          return "Salve Mundi! ";
+		      }
+		  
+		    // new endpoint (:= URI where the RESTful service can be accessed from)
+		    // for "workout"
+		  
+		      @GetMapping("/workout")
+		      public String getDailyWorkout() {
+		          return "Run a hard 5k!";
+		      }
+		  }
+		  
+		  ```
+		- The `@RestController` annotation tells Spring that this class will be used to handle HTTP requests. It's a hint to Spring to convert the return values of methods in this class into HTTP response bodies.
+		- The `@GetMapping("/")` annotation is a composed annotation that acts as a shortcut for `@RequestMapping(method = RequestMethod.GET)`. It's used to map HTTP GET requests onto specific handler methods. In this case, it's mapping the root URL `("/")` to the `sayHello` method.
+	- Client Tool
+		- Send HTTP requests to the REST Web Service - API
+		- **Postman**
 - [MVC](https://www.tutorialspoint.com/design_pattern/mvc_pattern.htm)
   collapsed:: true
 	- ```java
