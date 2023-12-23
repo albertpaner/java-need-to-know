@@ -932,7 +932,9 @@
 		- Read
 		- Update
 		- Delete
-- **JSON**((658154ea-6845-4dc5-a284-e738f482f098))
+- **JSON**
+  id:: 6586c49b-1d63-4fa1-8633-a237b80c00d6
+  collapsed:: true
 	- JavaScript Object Notation
 	- lightweight data format for storing and exchanging data
 	- language independent.. not just for JavaScript
@@ -955,7 +957,6 @@
 	    			 }
 	  }
 	  ```
--
 - [Authentication and Authorization](https://docs.oracle.com/en/java/javase/11/security/java-authentication-and-authorization-service-jaas-reference-guide.html#GUID-2A935F5E-0803-411D-B6BC-F8C64D01A25C)
   collapsed:: true
 	- Authentication is the process of verifying who a user is, while Authorization is about verifying what they have access to
@@ -976,7 +977,7 @@
 		     							base64DecodeToByteArray("4pE8z3PBoHjnV1AhvGk+e8h2p+ShZpOnpr8cwHmMh1w=")
 		  )
 		  ```
-		- JSON Web Tokens (JWT) are used for both authentication and authorization in web development.  When a user logs in, the server authenticates the user's credentials and if they are valid, the server generates a JWT that is sent back to the client. This token contains a payload of data, or claims about the user, which could include their user ID, role, or other identifying information.  For subsequent requests, the client sends this token back to the server in the HTTP Authorization header. The server then verifies the token and if it's valid, allows the request to proceed. This is the authorization process. The server knows that the requester is a legitimate user who has previously authenticated and it can also inspect the token's claims to determine if the user has the necessary permissions to perform the requested operation.
+		- ((6586c49b-1d63-4fa1-8633-a237b80c00d6)) Web Tokens (JWT) are used for both authentication and authorization in web development.  When a user logs in, the server authenticates the user's credentials and if they are valid, the server generates a JWT that is sent back to the client. This token contains a payload of data, or claims about the user, which could include their user ID, role, or other identifying information.  For subsequent requests, the client sends this token back to the server in the HTTP Authorization header. The server then verifies the token and if it's valid, allows the request to proceed. This is the authorization process. The server knows that the requester is a legitimate user who has previously authenticated and it can also inspect the token's claims to determine if the user has the necessary permissions to perform the requested operation.
 	- [OAuth](https://www.ramotion.com/blog/what-is-oauth-authentification/#:~:text=OAuth%20is%20an%20open%20standard,applications%20without%20compromising%20their%20passwords)
 - Maven
   collapsed:: true
@@ -999,6 +1000,7 @@
 		- Programma scritto in Java e residente su un server, in grado di gestire le richieste generate da uno o più client, attraverso uno scambio di messaggi tra il server ed i client stessi che hanno effettuato la richiesta. Tipicamente sono collocate all'interno di Application Server o Web Application Server come, ad esempio, Tomcat.
 		- [HttpServlet](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServlet.html)
 			- Parameters
+			  collapsed:: true
 				- `req` - an [HttpServletRequest](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServletRequest.html) object that contains the request the client has made of the servlet
 				  collapsed:: true
 					- [getAttribute](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/ServletRequest.html#getAttribute-java.lang.String-)
@@ -1007,100 +1009,109 @@
 						- [forward](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/RequestDispatcher.html#forward-javax.servlet.ServletRequest-javax.servlet.ServletResponse-)
 				- `resp` - an [HttpServletResponse](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServletResponse.html) object that contains the response the servlet sends to the client
 					- [sendRedirect](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServletResponse.html#sendRedirect-java.lang.String-)
-			- [doGet](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServlet.html#doGet-javax.servlet.http.HttpServletRequest-javax.servlet.http.HttpServletResponse-)
-			  collapsed:: true
-				- It's usually used to **preprocess** a request. I.e. doing some business stuff before presenting the HTML output from a JSP, such as gathering data for display in a table.
-				- Retrieve a representation of a resource
+			- ((6586c838-35bc-45fd-82f5-aa0882ce0981))
+				- [doGet](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServlet.html#doGet-javax.servlet.http.HttpServletRequest-javax.servlet.http.HttpServletResponse-)
+				  id:: 658154ea-6aa6-46a7-9d90-5aa3a15472fc
 				  collapsed:: true
-				  SAFE - IDEMPOTENT
-					- SAFE = without any side effects for which users are held responsible
-					- IDEMPOTENT = it can be safely repeated
-						- you get exactly the same result everytime you execute the request (leaving authorization/authentication and the time-sensitive nature of the page —search results, last news, etc— outside consideration)
-				- Multiple identical requests return the same result
-				- Corresponds to READ
-				- ```jsp
-				  <dl>
-				      <dt>ID</dt>
-				      <dd>${product.id}</dd>
-				      <dt>Name</dt>
-				      <dd>${product.name}</dd>
-				      <dt>Description</dt>
-				      <dd>${product.description}</dd>
-				      <dt>Price</dt>
-				      <dd>${product.price}</dd>
-				      <dt>Image</dt>
-				      <dd><img src="productImage?id=${product.id}" /></dd>
-				  </dl>
-				  ```
-				- ```java
-				  @WebServlet("/product")
-				  public class ProductServlet extends HttpServlet {
-				  
-				      @EJB
-				      private ProductService productService;
-				  
-				      @Override
-				      protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				          Product product = productService.find(request.getParameter("id"));
-				          request.setAttribute("product", product); // Will be available as ${product} in JSP
-				          request.getRequestDispatcher("/WEB-INF/product.jsp").forward(request, response);
-				      }
-				  
-				  }
-				  ```
-			- [doPost](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServlet.html#doPost-javax.servlet.http.HttpServletRequest-javax.servlet.http.HttpServletResponse-)
-			  collapsed:: true
-				- usually used to **postprocess** a request. I.e. gathering data from a submitted HTML form and doing some business stuff with it (conversion, validation, saving in DB, etcetera). Finally usually the result is presented as HTML from the forwarded JSP page.
-				- Used to create new resources
-				  NOT SAFE - NOT IDEMPOTENT
-				- corresponds to CREATE
-				- ```jsp
-				  <form action="login" method="post">
-				      <input type="text" name="username">
-				      <input type="password" name="password">
-				      <input type="submit" value="login">
-				      <span class="error">${error}</span>
-				  </form>
-				  ```
-				- ```java
-				  @WebServlet("/login")
-				  public class LoginServlet extends HttpServlet {
-				  
-				      @EJB
-				      private UserService userService;
-				  
-				      @Override
-				      protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				          String username = request.getParameter("username");
-				          String password = request.getParameter("password");
-				          User user = userService.find(username, password);
-				  
-				          if (user != null) {
-				              request.getSession().setAttribute("user", user);
-				              response.sendRedirect("home");
-				          }
-				          else {
-				              request.setAttribute("error", "Unknown user, please try again");
-				              request.getRequestDispatcher("/login.jsp").forward(request, response);
-				          }
-				      }
-				  
-				  }
-				  ```
-			- [doPut](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServlet.html#doPut-javax.servlet.http.HttpServletRequest-javax.servlet.http.HttpServletResponse-)
-			  collapsed:: true
-				- Update or Create a resource
-				  NOT SAFE - IDEMPOTENT
-				- Corresponds to UPDATE
-				-
-			- [doDelete](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServlet.html#doDelete-javax.servlet.http.HttpServletRequest-javax.servlet.http.HttpServletResponse-)
-			  collapsed:: true
-				- Used to delete a resource
-				- corresponds to DELETE
+					- It's usually used to **preprocess** a request. I.e. doing some business stuff before presenting the HTML output from a JSP, such as gathering data for display in a table.
+					- Retrieve a representation of a resource
+					  collapsed:: true
+					  SAFE - IDEMPOTENT
+						- SAFE = without any side effects for which users are held responsible
+						- IDEMPOTENT = it can be safely repeated
+							- you get exactly the same result everytime you execute the request (leaving authorization/authentication and the time-sensitive nature of the page —search results, last news, etc— outside consideration)
+					- Multiple identical requests return the same result
+					- Corresponds to READ
+					- ```jsp
+					  <dl>
+					      <dt>ID</dt>
+					      <dd>${product.id}</dd>
+					      <dt>Name</dt>
+					      <dd>${product.name}</dd>
+					      <dt>Description</dt>
+					      <dd>${product.description}</dd>
+					      <dt>Price</dt>
+					      <dd>${product.price}</dd>
+					      <dt>Image</dt>
+					      <dd><img src="productImage?id=${product.id}" /></dd>
+					  </dl>
+					  ```
+					- ```java
+					  @WebServlet("/product")
+					  public class ProductServlet extends HttpServlet {
+					  
+					      @EJB
+					      private ProductService productService;
+					  
+					      @Override
+					      protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+					          Product product = productService.find(request.getParameter("id"));
+					          request.setAttribute("product", product); // Will be available as ${product} in JSP
+					          request.getRequestDispatcher("/WEB-INF/product.jsp").forward(request, response);
+					      }
+					  
+					  }
+					  ```
+				- [doPost](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServlet.html#doPost-javax.servlet.http.HttpServletRequest-javax.servlet.http.HttpServletResponse-)
+				  collapsed:: true
+					- usually used to **postprocess** a request. I.e. gathering data from a submitted HTML form and doing some business stuff with it (conversion, validation, saving in DB, etcetera). Finally usually the result is presented as HTML from the forwarded JSP page.
+					- Used to create new resources
+					  NOT SAFE - NOT IDEMPOTENT
+					- corresponds to CREATE
+					- ```jsp
+					  <form action="login" method="post">
+					      <input type="text" name="username">
+					      <input type="password" name="password">
+					      <input type="submit" value="login">
+					      <span class="error">${error}</span>
+					  </form>
+					  ```
+					- ```java
+					  @WebServlet("/login")
+					  public class LoginServlet extends HttpServlet {
+					  
+					      @EJB
+					      private UserService userService;
+					  
+					      @Override
+					      protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+					          String username = request.getParameter("username");
+					          String password = request.getParameter("password");
+					          User user = userService.find(username, password);
+					  
+					          if (user != null) {
+					              request.getSession().setAttribute("user", user);
+					              response.sendRedirect("home");
+					          }
+					          else {
+					              request.setAttribute("error", "Unknown user, please try again");
+					              request.getRequestDispatcher("/login.jsp").forward(request, response);
+					          }
+					      }
+					  
+					  }
+					  ```
+				- [doPut](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServlet.html#doPut-javax.servlet.http.HttpServletRequest-javax.servlet.http.HttpServletResponse-)
+				  collapsed:: true
+					- Update or Create a resource
+					  NOT SAFE - IDEMPOTENT
+					- Corresponds to UPDATE
+					-
+				- [doDelete](https://docs.oracle.com/javaee%2F7%2Fapi%2F%2F/javax/servlet/http/HttpServlet.html#doDelete-javax.servlet.http.HttpServletRequest-javax.servlet.http.HttpServletResponse-)
+				  collapsed:: true
+					- Used to delete a resource
+					- corresponds to DELETE
 			-
 	- Servlets and JSP (JavaServer Pages) are both technologies used in Java for building web applications
 	- JavaServer Pages (JSP) is a technology for developing web pages that support dynamic content which helps developers insert java code in HTML pages by making use of special JSP tags, most of which start with <% and end with %>. A JSP page is compiled into a Java servlet the first time it is accessed. After that, the generated servlet is used to service the incoming requests
 	-
+- **HTTP Methods** <-> **CRUD Operations**
+  id:: 6586c838-35bc-45fd-82f5-aa0882ce0981
+  collapsed:: true
+	- **GET** <-> **READ** a list of entities or single entity
+	- **POST** <-> **CREATE** a new entity
+	- **PUT** <-> **UPDATE** an existing entity
+	- **DELETE** <-> **DELETE** an existing entity
 - [Singleton](https://www.javaboss.it/singleton-design-pattern/)
   collapsed:: true
 	- ```java
@@ -1406,7 +1417,9 @@
 		- The control of object creation and lifecycle is transferred to the framework, rather than managed by the application code
 	- **REST** REpresentational State Transfer
 		- lightweight approach for communicating between applications.. we can make REST API calls over HTTP.. is language-independent
+		- leverage HTTP methods for CRUD operations
 		- Controller
+		  collapsed:: true
 			- ```java
 			  import org.springframework.web.bind.annotation.GetMapping;
 			  import org.springframework.web.bind.annotation.RestController;
@@ -1538,3 +1551,4 @@
 	- implements JPA Spec
 	- uses JDBC in the background
 	- creates database tables from java annotations
+	- leverage ((6586c838-35bc-45fd-82f5-aa0882ce0981))
