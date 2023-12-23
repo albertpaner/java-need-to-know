@@ -1188,6 +1188,8 @@
 		      Student findById(int id);
 		    
 		      void saveStudent(Student student);
+		    
+		    	void updateStudent(Student student);
 		  }
 		  
 		  ```
@@ -1224,6 +1226,12 @@
 		      @Transactional
 		      public void saveStudent(Student student) {
 		          entityManager.persist(student);
+		      }
+		    
+		    	@Override
+		      @Transactional
+		      public void updateStudent(Student student) {
+		          entityManager.merge(student);
 		      }
 		  }
 		  ```
