@@ -1190,6 +1190,8 @@
 		      void saveStudent(Student student);
 		    
 		    	void updateStudent(Student student);
+		    
+		  	void deleteStudentById(int id);
 		  }
 		  
 		  ```
@@ -1232,6 +1234,14 @@
 		      @Transactional
 		      public void updateStudent(Student student) {
 		          entityManager.merge(student);
+		      }
+		    
+		      @Override
+		      @Transactional
+		      public void deleteStudentById(int id) {
+		          entityManager.createQuery("delete from Student where id=:theId")
+		                  .setParameter("theId", id)
+		                  .executeUpdate();
 		      }
 		  }
 		  ```
